@@ -5,7 +5,12 @@ const counterSlice = createSlice({
     initialState: {
         counterList: [],
     },
-    reducers: {},
+    reducers: {
+        updateSize: (state, action) => {
+            state.counterList = new Array(action.payload).fill(0);
+        }
+    },
 });
 
+export const {updateSize} = counterSlice.actions;
 export default counterSlice.reducer;

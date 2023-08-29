@@ -1,8 +1,12 @@
+import { useDispatch } from "react-redux";
+import { updateSize } from "./counterSlice";
+
 const CounterSizeGenerator = (props) => {
+    const dispatch = useDispatch();
     const onInputChange = (event) => {
         const inputSize = parseInt(event.target.value);
 
-        props.onSizeChange(inputSize);
+        dispatch(updateSize(inputSize));
     };
 
     return (
