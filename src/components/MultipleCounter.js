@@ -5,9 +5,8 @@ import CounterSizeGenerator from "./CounterSizeGenerator";
 import { useSelector } from "react-redux";
 
 const Counter = () => {
-    const [counterList, setCounterList] = useState([]);
+    const counterList = useSelector(state => state.counter.counterList);
     const sum = counterList.reduce((prev, count) => prev + count, 0);
-    useSelector(state => state.counter.counterList);
 
     return (
         <div>
